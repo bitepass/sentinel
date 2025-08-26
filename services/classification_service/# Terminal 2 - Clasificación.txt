@@ -1,0 +1,6 @@
+# Terminal 2 - Clasificación  
+cd "C:\Users\carri\proyecto sentinel"
+venv\Scripts\activate
+cd services\classification_service
+uvicorn app.main:app --host 0.0.0.0 --port 8002 --reload
+

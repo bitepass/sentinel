@@ -1,0 +1,637 @@
+{
+  "jerarquia": [
+    "HOMICIDIO",
+    "DELITOS CONTRA INTEGRIDAD SEXUAL",
+    "ROBO",
+    "LESIONES",
+    "HURTO",
+    "ESTAFA",
+    "SUSTRACCIÓN AUTOMOTOR",
+    "SUSTRACCIÓN MOTOVEHÍCULO",
+    "ENCUBRIMIENTO",
+    "LEY 23737",
+    "VIOLENCIA DE GÉNERO",
+    "EXTORSIÓN",
+    "AMENAZAS",
+    "USURPACIÓN",
+    "TENENCIA DE ARMAS",
+    "PORTACIÓN DE ARMAS",
+    "ABUSO DE ARMAS",
+    "ENFRENTAMIENTO",
+    "FALSIFICACIÓN DOCUMENTOS",
+    "LAVADO DE ACTIVOS",
+    "ABIGEATO"
+  ],
+  "delitos": [
+    {
+      "calificacion": "HOMICIDIO",
+      "base_legal": "Arts. 79-84 CP",
+      "definicion": "Muerte dolosa de una persona.",
+      "modalidades": [
+        {
+          "nombre": "HOMICIDIO SIMPLE",
+          "criterios": ["mató", "asesinó", "muerte dolosa", "homicidio", "quitó la vida", "causó la muerte", "disparó y mató", "apuñaló hasta matar", "golpeó hasta causar muerte"],
+          "base_legal": "Art. 79 CP"
+        },
+        {
+          "nombre": "FEMICIDIO",
+          "criterios": ["mujer", "género", "pareja", "ex pareja", "ex marido", "ex novio", "ex concubino", "violencia doméstica", "violencia de género", "machista", "por ser mujer", "celos", "posesión", "control", "no te vas", "eres mía"],
+          "base_legal": "Art. 80 inc. 1 CP"
+        },
+        {
+          "nombre": "INTRAFAMILIAR",
+          "criterios": ["hijo", "padre", "madre", "hermano", "familia", "pariente", "familiar", "en el hogar", "casa familiar", "durante discusión familiar"],
+          "base_legal": "Art. 80 inc. 1 CP"
+        },
+        {
+          "nombre": "EN RIÑA",
+          "criterios": ["riña", "pelea", "enfrentamiento", "gresca", "batalla campal", "más de dos personas", "varios involucrados", "pelea múltiple", "todos peleando"],
+          "base_legal": "Art. 95 CP"
+        },
+        {
+          "nombre": "EN OCASIÓN DE ROBO",
+          "criterios": ["durante robo", "mientras robaba", "en el robo", "para robar", "resistió el robo", "se defendió del robo", "en el asalto"],
+          "base_legal": "Art. 165 CP"
+        },
+        {
+          "nombre": "AJUSTE DE CUENTAS",
+          "criterios": ["venganza", "ajuste", "deuda pendiente", "represalia", "revancha", "sicario", "encargo", "mandado a matar", "ejecución", "narco"],
+          "base_legal": "Art. 80 inc. 2 CP"
+        }
+      ]
+    },
+    {
+      "calificacion": "HOMICIDIO CULPOSO",
+      "base_legal": "Art. 84 CP",
+      "definicion": "Muerte por imprudencia, negligencia, impericia.",
+      "modalidades": [
+        {
+          "nombre": "CULPOSO",
+          "criterios": ["accidente con muerte", "imprudencia", "negligencia", "impericia"],
+          "base_legal": "Art. 84 CP"
+        }
+      ]
+    },
+    {
+      "calificacion": "LESIONES",
+      "base_legal": "Arts. 89-94 CP",
+      "modalidades": [
+        {
+          "nombre": "CON ARMA DE FUEGO",
+          "criterios": ["disparó", "balazo", "proyectil", "pistola", "revólver", "herida bala", "arma fuego", "calibre", "tiro"]
+        },
+        {
+          "nombre": "CON ARMA BLANCA",
+          "criterios": ["cuchillo", "navaja", "puñal", "cortante", "punzante", "apuñaló", "cortó", "herida corto punzante"]
+        },
+        {
+          "nombre": "CON ARMA IMPROPIA",
+          "criterios": ["botella", "palo", "piedra", "ladrillo", "fierro", "objeto contundente", "golpeó con", "elemento impropio"]
+        }
+      ]
+    },
+    {
+      "calificacion": "ENFRENTAMIENTO",
+      "definicion": "Intercambio de disparos o violencia armada.",
+      "modalidades": [
+        {
+          "nombre": "EN OCASIÓN DE ROBO",
+          "criterios": ["se defendió", "resistió robo", "intercambio disparos durante asalto", "víctima armada", "repelió agresión"]
+        },
+        {
+          "nombre": "AJUSTE DE CUENTAS",
+          "criterios": ["venganza", "tiroteo", "enfrentamiento bandas", "represalia", "guerra narcos", "disputa territorial"]
+        },
+        {
+          "nombre": "PROCEDIMIENTO POLICIAL",
+          "criterios": ["policía", "procedimiento", "persecución", "operativo", "resistió arresto", "tiroteo con oficiales"]
+        },
+        {
+          "nombre": "EN RIÑA",
+          "criterios": ["pelea grupal", "enfrentamiento múltiple", "batalla campal", "todos armados", "tiroteo cruzado"]
+        },
+        {
+          "nombre": "BANDAS ANTAGÓNICAS",
+          "criterios": ["bandas rivales", "grupos enfrentados", "disputa territorial", "organizaciones criminales"]
+        }
+      ]
+    },
+    {
+      "calificacion": "ROBO",
+      "base_legal": "Arts. 164-167 CP",
+      "definicion": "Apoderamiento con fuerza en cosas o violencia en personas.",
+      "modalidades": [
+        {
+          "nombre": "ESCRUCHE",
+          "criterios": ["casa vacía", "sin moradores", "ausencia propietarios", "no había gente", "forzó puerta", "rompió ventana", "violentó acceso", "fuerza en cosas"]
+        },
+        {
+          "nombre": "ENTRADERA",
+          "criterios": ["entrada", "acceso", "portón", "cuando llegaba", "al entrar", "sorprendieron", "interceptaron", "esperaron", "hicieron ingresar"]
+        },
+        {
+          "nombre": "ASALTO EN FINCA",
+          "criterios": ["dentro casa", "en el domicilio", "interior vivienda", "en presencia moradores", "mientras estaban", "encontraron gente", "con habitantes"]
+        },
+        {
+          "nombre": "ASALTO EN VÍA PÚBLICA",
+          "criterios": ["calle", "vereda", "plaza", "parque", "semáforo", "parada", "vía pública", "espacio público"]
+        },
+        {
+          "nombre": "ASALTO EN COMERCIO",
+          "criterios": ["local", "negocio", "comercio", "tienda", "kiosco", "almacén", "empleados", "clientes", "caja registradora"]
+        },
+        {
+          "nombre": "MOTOCHORROS",
+          "criterios": ["motocicleta", "moto", "ciclomotor", "rodado menor", "en moto", "dos sujetos en moto", "motociclistas", "desde motovehículo"]
+        },
+        {
+          "nombre": "ROBACABLES",
+          "criterios": ["cables", "cableado", "instalación eléctrica", "alambrado", "telecom", "telefónico", "luz", "electricidad", "fibra óptica"]
+        },
+        {
+          "nombre": "ROBO SIMPLE",
+          "criterios": ["medidores", "caños", "garrafas", "herramientas", "materiales", "sin víctimas presentes", "elementos específicos"]
+        },
+        {
+          "nombre": "ROBARRUEDAS",
+          "criterios": ["ruedas", "neumáticos", "llantas", "cubiertas", "auxilio", "dejaron en ladrillos", "sin ruedas", "sobre bloques"]
+        },
+        {
+          "nombre": "ROMPEVIDRIOS",
+          "criterios": ["rompió vidrio", "quebró cristal", "vidrio roto", "parabrisas", "del interior del vehículo", "auto estacionado"]
+        },
+        {
+          "nombre": "ARREBATADOR",
+          "criterios": ["arrebató", "quitó", "tiró", "sin dar tiempo", "inmediatamente", "por sorpresa", "de las manos", "sin reacción posible"]
+        },
+        {
+          "nombre": "BICICLETA",
+          "criterios": ["bicicleta", "bici", "rodado", "ciclomotor de pedales"]
+        },
+        {
+          "nombre": "ROBO DE CELULAR",
+          "criterios": ["celular", "teléfono", "móvil", "smartphone", "equipo", "le quitó el teléfono", "robó celular"]
+        },
+        {
+          "nombre": "ROBO BANK LINK/CAJERO",
+          "criterios": ["cajero", "banco", "extracción", "tarjeta", "pin", "homebanking", "operación bancaria", "retiro dinero"]
+        },
+        {
+          "nombre": "ROBO DELIVERY",
+          "criterios": ["delivery", "reparto", "repartidor", "pedidos ya", "rappi", "mientras repartía", "entrega comida"]
+        },
+        {
+          "nombre": "ROBO EXPRESS/SECUESTRO EXPRESS",
+          "criterios": ["secuestro express", "secuestró brevemente", "pocas horas", "vaciar cuenta", "sacar dinero", "cajeros automáticos"]
+        }
+      ]
+    },
+    {
+      "calificacion": "HURTO",
+      "base_legal": "Arts. 162-163 CP",
+      "definicion": "Apoderamiento sin violencia ni fuerza.",
+      "modalidades": [
+        {
+            "nombre": "HURTO SIMPLE",
+            "criterios": ["sustracción", "se llevó", "hurto", "sin violencia", "aprovechó", "sin que se diera cuenta", "cuando no estaba"]
+        },
+        {
+            "nombre": "HURTO AGRAVADO GANADO",
+            "criterios": ["ganado", "vacas", "caballos", "ovejas", "animales campo", "estancia", "campo", "rural", "hacienda"]
+        },
+        {
+            "nombre": "HURTO RURAL",
+            "criterios": ["campo", "rural", "máquinas agrícolas", "alambres", "postes", "herramientas campo", "productos agrícolas"]
+        },
+        {
+            "nombre": "HURTO OCASIONAL",
+            "criterios": ["incendio", "inundación", "accidente", "desastre", "emergencia", "aprovechó confusión", "durante evacuación"]
+        },
+        {
+            "nombre": "HURTO CON GANZÚA",
+            "criterios": ["ganzúa", "llave falsa", "herramientas especiales", "forzó cerradura", "violentó acceso sin fuerza", "abrió con técnica"]
+        }
+      ]
+    },
+    {
+      "calificacion": "SUSTRACCIÓN AUTOMOTOR",
+      "base_legal": "Art. 162 CP",
+      "modalidades": [
+        {
+          "nombre": "LEVANTAMIENTO",
+          "criterios": ["estacionado", "vía pública", "sin propietario", "abandonado", "se llevó vehículo", "sustracción sin dueño presente"]
+        },
+        {
+          "nombre": "ASALTO",
+          "criterios": ["bajate del auto", "entregá las llaves", "al conductor", "mientras manejaba", "intimidación al propietario"]
+        }
+      ]
+    },
+    {
+        "calificacion": "SUSTRACCIÓN MOTOVEHÍCULO",
+        "base_legal": "Art. 162 CP",
+        "modalidades": [
+          {
+            "nombre": "LEVANTAMIENTO",
+            "criterios": ["moto estacionada", "vía pública", "sin propietario", "se llevó motovehículo"]
+          },
+          {
+            "nombre": "ASALTO",
+            "criterios": ["bajate de la moto", "entregá las llaves", "al conductor de la moto", "intimidación al propietario de la moto"]
+          }
+        ]
+    },
+    {
+      "calificacion": "ESTAFA",
+      "base_legal": "Arts. 172-175 CP",
+      "definicion": "Defraudación mediante ardid o engaño.",
+      "modalidades": [
+        {
+          "nombre": "ESTAFA MARKETPLACE",
+          "criterios": ["mercado libre", "facebook marketplace", "olx", "venta online", "publicación falsa", "no entregó producto", "estafa virtual"]
+        },
+        {
+          "nombre": "ESTAFA WHATSAPP",
+          "criterios": ["whatsapp", "mensaje", "audio", "familiar en problemas", "soy tu hijo", "accidente", "necesito plata urgente"]
+        },
+        {
+          "nombre": "ESTAFA CUENTO DEL TÍO",
+          "criterios": ["herencia", "premio", "lotería", "negocio", "inversión", "historia elaborada", "ganancia fácil", "presencial"]
+        },
+        {
+          "nombre": "ESTAFA OTROS",
+          "criterios": ["telefónico", "bancario", "tarjeta", "phishing", "sms"]
+        }
+      ]
+    },
+    {
+      "calificacion": "USURPACIÓN",
+      "base_legal": "Art. 181 CP",
+      "modalidades": [
+        {
+          "nombre": "USURPACIÓN",
+          "criterios": ["ocupó", "se metió", "desalojó", "echó", "tomó posesión", "terreno", "casa", "propiedad", "inmueble"]
+        }
+      ]
+    },
+    {
+      "calificacion": "ABUSO SEXUAL",
+      "base_legal": "Arts. 119-124 CP",
+      "modalidades": [
+        {
+          "nombre": "ABUSO SEXUAL SIMPLE",
+          "criterios": ["tocó", "manoseo", "acto sexual", "sin acceso carnal", "abuso deshonesto", "contra pudor"],
+          "base_legal": "Art. 127 CP"
+        },
+        {
+          "nombre": "ABUSO SEXUAL CON ACCESO CARNAL",
+          "criterios": ["violación", "acceso carnal", "penetración", "viólo", "abuso sexual agravado", "cópula"],
+          "base_legal": "Art. 119 CP"
+        }
+      ]
+    },
+    {
+      "calificacion": "TENENCIA DE ARMAS",
+      "base_legal": "Ley 20.429",
+      "modalidades": [
+        {
+          "nombre": "TENENCIA DE ARMAS",
+          "criterios": ["tenía en casa", "guardaba", "poseía", "sin papeles", "domicilio", "sin autorización", "ilegalmente"]
+        }
+      ]
+    },
+    {
+      "calificacion": "PORTACIÓN DE ARMAS",
+      "base_legal": "Ley 20.429",
+      "modalidades": [
+        {
+          "nombre": "PORTACIÓN DE ARMAS",
+          "criterios": ["llevaba encima", "en la calle", "fuera domicilio", "sin permiso", "circulando armado"]
+        }
+      ]
+    },
+    {
+      "calificacion": "ABUSO DE ARMAS",
+      "base_legal": "Arts. 104-105 CP",
+      "modalidades": [
+        {
+          "nombre": "ABUSO DE ARMAS",
+          "criterios": ["disparó sin herir", "amenazó con arma", "exhibió", "agresión con arma", "intimidación armada"]
+        }
+      ]
+    },
+    {
+      "calificacion": "LEY 23737",
+      "base_legal": "Ley 23.737 de Estupefacientes",
+      "modalidades": [
+        {
+          "nombre": "TENENCIA",
+          "criterios": ["para consumo personal", "pequeña cantidad", "uso propio", "tenía en su poder"]
+        },
+        {
+          "nombre": "CONSUMO",
+          "criterios": ["consumiendo", "fumando", "drogado", "en estado", "público", "vía pública", "bajo efectos"]
+        },
+        {
+          "nombre": "COMERCIALIZACIÓN",
+          "criterios": ["venta", "distribución", "comercio", "fraccionado", "dealer", "vendía", "punto venta", "tráfico"]
+        },
+        {
+          "nombre": "SIEMBRA",
+          "criterios": ["plantación", "cultivaba", "plantas", "semillas", "marihuana", "cannabis", "cultivo hidropónico"]
+        }
+      ]
+    },
+    {
+      "calificacion": "ENCUBRIMIENTO",
+      "base_legal": "Art. 277 CP",
+      "modalidades": [
+        {
+          "nombre": "ENCUBRIMIENTO VÍA PÚBLICA",
+          "criterios": ["pedido secuestro", "patente adulterada", "vehículo robado", "en la calle", "circulando", "identificación falsa"]
+        },
+        {
+          "nombre": "ENCUBRIMIENTO TALLER",
+          "criterios": ["taller clandestino", "desarmadero", "autopartes", "ley 13081", "adulteración chasis", "numeración"]
+        },
+        {
+          "nombre": "ENCUBRIMIENTO DOMICILIO PARTICULAR",
+          "criterios": ["casa particular", "domicilio", "comercio", "no taller", "ocultaba", "guardaba", "escondía elementos"]
+        }
+      ]
+    },
+    {
+        "calificacion": "EXTORSIÓN",
+        "base_legal": "Arts. 168-170 CP",
+        "modalidades": [
+          {
+            "nombre": "EXTORSIÓN TELEFÓNICA",
+            "criterios": ["llamada intimidatoria", "amenaza telefónica"]
+          },
+          {
+            "nombre": "SECUESTRO EXTORSIVO",
+            "criterios": ["detener persona para rescate", "secuestro por dinero"],
+            "base_legal": "Art. 170 CP"
+          },
+          {
+            "nombre": "EXTORSIÓN VIRTUAL",
+            "criterios": ["extorsión por medios digitales", "amenaza online"]
+          }
+        ]
+    },
+    {
+        "calificacion": "AMENAZAS",
+        "base_legal": "Art. 149 bis CP",
+        "modalidades": [
+          {
+            "nombre": "AMENAZAS",
+            "criterios": ["intimidación", "amenaza sin extorsión", "amenazó"]
+          }
+        ]
+    },
+    {
+        "calificacion": "FALSIFICACIÓN DOCUMENTOS",
+        "base_legal": "Arts. 292-298 CP",
+        "modalidades": [
+          {
+            "nombre": "FALSIFICACIÓN DNI",
+            "criterios": ["DNI falso", "documento nacional de identidad adulterado"]
+          },
+          {
+            "nombre": "FALSIFICACIÓN TARJETAS",
+            "criterios": ["tarjeta de crédito falsa", "tarjeta de débito clonada"]
+          },
+          {
+            "nombre": "FALSIFICACIÓN DIGITAL",
+            "criterios": ["documento electrónico falso", "firma digital falsificada"]
+          }
+        ]
+    },
+    {
+        "calificacion": "LAVADO DE ACTIVOS",
+        "base_legal": "Ley 25.246",
+        "modalidades": [
+          {
+            "nombre": "LAVADO DE ACTIVOS",
+            "criterios": ["ocultar origen ilícito de bienes", "blanqueo de capitales"]
+          }
+        ]
+    },
+    {
+        "calificacion": "VIOLENCIA DE GÉNERO",
+        "base_legal": "Ley 26.485",
+        "modalidades": [
+          {
+            "nombre": "VIOLENCIA FÍSICA",
+            "criterios": ["golpeó mujer", "violencia doméstica", "maltrato físico", "lesiones contexto género", "agresión pareja"]
+          },
+          {
+            "nombre": "VIOLENCIA PSICOLÓGICA",
+            "criterios": ["amenazas", "control", "manipulación", "acoso", "violencia emocional", "intimidación psicológica"]
+          },
+          {
+            "nombre": "VIOLENCIA ECONÓMICA",
+            "criterios": ["no daba plata", "control económico", "no trabajar", "dependencia económica", "chantaje dinero"]
+          }
+        ]
+    },
+    {
+        "calificacion": "ABIGEATO",
+        "base_legal": "Leyes provinciales específicas",
+        "modalidades": [
+          {
+            "nombre": "ABIGEATO",
+            "criterios": ["hurto de ganado", "robo de ganado", "animales de campo"]
+          }
+        ]
+    }
+  ],
+  "alertas": [
+    {
+      "nombre": "ALERTA GÉNERO",
+      "trigger": {
+        "condiciones": ["(VÍCTIMA = 'Femenino' Y CALIFICACIÓN = 'Homicidio') Y (contiene: ['pareja', 'ex', 'marido', 'novio', 'concubino'] O contiene: ['violencia doméstica', 'celos', 'no te vas', 'eres mía'] O contiene: ['discusión pareja', 'separación', 'dejarlo'])"]
+      },
+      "acciones_ai": ["CAMBIAR modalidad de 'SIMPLE' a 'FEMICIDIO'", "VERIFICAR si hay antecedentes violencia género", "MARCAR para revisión especializada"],
+      "mensaje": "⚠️ POSIBLE FEMICIDIO DETECTADO - Verificar contexto de género"
+    },
+    {
+      "nombre": "ALERTA MENOR",
+      "trigger": {
+        "condiciones": ["MAYOR O MENOR = 'Menor'", "contiene: ['17 años', '16 años', '15 años', 'adolescente', 'menor']", "VÍCTIMA menor en delitos sexuales", "IMPUTADO menor en cualquier delito grave"]
+      },
+      "acciones_ai": ["ACTIVAR protocolo menores", "VERIFICAR jurisdicción especializada (Fuero Penal Juvenil)", "OCULTAR identidad en reportes"],
+      "mensaje": "👶 MENOR INVOLUCRADO - Aplicar protocolo especial y jurisdicción de menores"
+    },
+    {
+      "nombre": "ALERTA ARMA",
+      "trigger": {
+        "condiciones": ["(contiene: ['pistola', 'disparó', 'balazo'] Y ARMAS = 'Ninguna')", "(contiene: ['cuchillo', 'apuñaló'] Y ARMAS = 'Ninguna')", "(contiene: ['arma', 'armado'] Y ARMAS = 'Ninguna')", "(ARMAS = 'Fuego' Y no menciona disparo/herida bala)"]
+      },
+      "acciones_ai": ["CORREGIR campo ARMAS automáticamente si es obvio", "MARCAR para revisión si es ambiguo", "VERIFICAR coherencia con LESIONADA"],
+      "mensaje": "🔫 INCONSISTENCIA ARMAS - Revisar descripción vs campo completado"
+    },
+    {
+      "nombre": "ALERTA LUGAR",
+      "trigger": {
+        "condiciones": ["MODALIDAD = 'ESCRUCHE' Y LUGAR ≠ 'Finca'", "MODALIDAD = 'ASALTO VÍA PÚBLICA' Y LUGAR ≠ 'Vía pública'", "MODALIDAD = 'ASALTO COMERCIO' Y LUGAR ≠ 'Comercio'"]
+      },
+      "acciones_ai": ["SUGERIR modalidad correcta según lugar", "VERIFICAR descripción completa"],
+      "mensaje": "📍 LUGAR-MODALIDAD INCOMPATIBLES - Verificar clasificación"
+    },
+    {
+      "nombre": "ALERTA ESTAFA",
+      "trigger": {
+        "condiciones": ["(contiene: ['WhatsApp', 'mensaje', 'familiar problemas'] Y CALIFICACIÓN ≠ 'ESTAFA')", "(contiene: ['Mercado Libre', 'no entregó'] Y CALIFICACIÓN ≠ 'ESTAFA')", "(contiene: ['herencia', 'premio', 'ganaste'] Y CALIFICACIÓN ≠ 'ESTAFA')"]
+      },
+      "acciones_ai": ["SUGERIR CALIFICACIÓN = 'ESTAFA'", "PROPONER modalidad específica"],
+      "mensaje": "💰 POSIBLE ESTAFA NO CLASIFICADA - Revisar criterios defraudación"
+    },
+    {
+      "nombre": "ALERTA MODALIDAD ROBO",
+      "trigger": {
+        "condiciones": ["(contiene: ['sin moradores', 'casa vacía'] Y MODALIDAD ≠ 'ESCRUCHE')", "(contiene: ['en la entrada', 'portón'] Y MODALIDAD ≠ 'ENTRADERA')", "(contiene: ['moto', 'motocicleta'] Y MODALIDAD ≠ 'MOTOCHORROS')"]
+      },
+      "acciones_ai": ["CORREGIR modalidad automáticamente", "VERIFICAR otros elementos del robo"],
+      "mensaje": "🏠 MODALIDAD ROBO INCORRECTA - Aplicando corrección automática"
+    },
+    {
+      "nombre": "ALERTA GRAVEDAD",
+      "trigger": {
+        "condiciones": ["(CALIFICACIÓN = 'LESIONES' Y contiene: ['muerte', 'falleció', 'óbito'])", "(CALIFICACIÓN = 'HURTO' Y contiene: ['violencia', 'amenazó', 'intimidó'])", "(CALIFICACIÓN = 'ROBO SIMPLE' Y contiene: ['arma', 'disparó', 'amenazó'])"]
+      },
+      "acciones_ai": ["ELEVAR clasificación automáticamente", "REVISAR todos los campos relacionados"],
+      "mensaje": "⚖️ DELITO SUBESTIMADO - Corrigiendo a clasificación superior"
+    },
+    {
+      "nombre": "ALERTA CONCURSO DELITOS",
+      "trigger": {
+        "condiciones": ["contiene indicadores de 2+ delitos diferentes (ej: 'violó y robó', 'mató y robó')", "descripción muy extensa con múltiples acciones"]
+      },
+      "acciones_ai": ["IDENTIFICAR delito principal (más grave)", "LISTAR delitos secundarios en OBSERVACIONES", "APLICAR regla de absorción/concurso"],
+      "mensaje": "🔄 CONCURSO DE DELITOS - Verificar delito principal y secundarios"
+    },
+    {
+      "nombre": "ALERTA TEMPORAL",
+      "trigger": {
+        "condiciones": ["(TENTATIVA = 'SI' Y descripción indica consumación)", "fecha/hora inconsistente con modalidad", "secuencia temporal ilógica en descripción"]
+      },
+      "acciones_ai": ["VERIFICAR coherencia temporal", "CORREGIR TENTATIVA si es obvio"],
+      "mensaje": "🕐 INCONSISTENCIA TEMPORAL - Revisar consumación vs tentativa"
+    },
+    {
+      "nombre": "ALERTA JURISDICCIÓN",
+      "trigger": {
+        "condiciones": ["delito federal en jurisdicción provincial", "menor en jurisdicción común", "delito complejo multi-jurisdiccional"]
+      },
+      "acciones_ai": ["SUGERIR jurisdicción correcta", "VERIFICAR competencia territorial"],
+      "mensaje": "👮 VERIFICAR JURISDICCIÓN - Posible incompetencia territorial"
+    }
+  ],
+  "validaciones": [
+    {
+      "condicion": "VÍCTIMA = 'Masculino' Y MODALIDAD = 'Femicidio'",
+      "mensaje": "ERROR: El Femicidio solo aplica a víctimas de género femenino."
+    },
+    {
+      "condicion": "ARMAS = 'Ninguna' Y MODALIDAD = 'Abuso de armas'",
+      "mensaje": "ERROR: Inconsistencia, no se puede registrar 'Abuso de armas' sin un arma."
+    },
+    {
+      "condicion": "LESIONADA = 'SI' Y CALIFICACIÓN = 'Hurto simple'",
+      "mensaje": "REVISAR: Un hurto no debería causar lesiones. Verificar si se trata de un Robo."
+    },
+    {
+      "condicion": "TENTATIVA = 'SI' Y descripción indica consumación",
+      "mensaje": "ERROR: Conflicto entre el campo 'Tentativa' y la descripción del hecho."
+    }
+  ],
+  "sugerencias_inteligentes": [
+    {
+        "contexto": "TECNOLÓGICO",
+        "sugerencias": [
+            {"detectado": ["celular", "robó"], "sugerencia": {"calificacion": "ROBO", "modalidad": "CELULAR"}},
+            {"detectado": ["WhatsApp", "plata", "hijo"], "sugerencia": {"calificacion": "ESTAFA", "modalidad": "WHATSAPP"}},
+            {"detectado": ["Mercado Libre", "no entregó"], "sugerencia": {"calificacion": "ESTAFA", "modalidad": "MARKETPLACE"}},
+            {"detectado": ["transferencia", "engaño"], "sugerencia": {"calificacion": "ESTAFA", "modalidad": "OTROS"}},
+            {"detectado": ["redes sociales", "amenazó"], "sugerencia": {"calificacion": "AMENAZAS", "modalidad": "VIRTUAL"}}
+        ]
+    },
+    {
+        "contexto": "VEHÍCULOS",
+        "sugerencias": [
+            {"detectado": ["moto", "robo"], "sugerencia": {"calificacion": "ROBO", "modalidad": "MOTOCHORROS"}},
+            {"detectado": ["auto", "levantaron"], "sugerencia": {"calificacion": "SUSTRACCIÓN AUTOMOTOR", "modalidad": "LEVANTAMIENTO"}},
+            {"detectado": ["taxi", "robó"], "sugerencia": {"calificacion": "ROBO", "modalidad": "CHOFERES/REPARTIDORES"}},
+            {"detectado": ["delivery", "asaltó"], "sugerencia": {"calificacion": "ROBO", "modalidad": "DELIVERY"}},
+            {"detectado": ["uber", "violencia"], "sugerencia": {"calificacion": "ROBO", "modalidad": "CHOFERES/REPARTIDORES"}}
+        ]
+    },
+    {
+        "contexto": "LUGAR",
+        "sugerencias": [
+            {"detectado": ["casa", "fuerza", "vacía"], "sugerencia": {"calificacion": "ROBO", "modalidad": "ESCRUCHE"}},
+            {"detectado": ["portón", "entrada"], "sugerencia": {"calificacion": "ROBO", "modalidad": "ENTRADERA"}},
+            {"detectado": ["comercio", "caja"], "sugerencia": {"calificacion": "ROBO", "modalidad": "ASALTO COMERCIO"}},
+            {"detectado": ["cajero", "banco"], "sugerencia": {"calificacion": "ROBO", "modalidad": "BANK LINK/CAJERO"}},
+            {"detectado": ["campo", "animales"], "sugerencia": {"calificacion": "ABIGEATO"}}
+        ]
+    },
+    {
+        "contexto": "VÍNCULOS",
+        "sugerencias": [
+            {"detectado": ["ex pareja", "mujer", "mató"], "sugerencia": {"calificacion": "HOMICIDIO", "modalidad": "FEMICIDIO"}},
+            {"detectado": ["familia", "discusión", "muerte"], "sugerencia": {"calificacion": "HOMICIDIO", "modalidad": "INTRAFAMILIAR"}},
+            {"detectado": ["varios", "pelea", "murió"], "sugerencia": {"calificacion": "HOMICIDIO", "modalidad": "EN RIÑA"}},
+            {"detectado": ["durante robo", "muerte"], "sugerencia": {"calificacion": "HOMICIDIO", "modalidad": "EN OCASIÓN DE ROBO"}}
+        ]
+    },
+    {
+        "contexto": "SUSTANCIAS",
+        "sugerencias": [
+            {"detectado": ["marihuana", "vendía"], "sugerencia": {"calificacion": "LEY 23737", "modalidad": "COMERCIALIZACIÓN"}},
+            {"detectado": ["cocaína", "consumo"], "sugerencia": {"calificacion": "LEY 23737", "modalidad": "CONSUMO"}},
+            {"detectado": ["plantas", "cultivaba"], "sugerencia": {"calificacion": "LEY 23737", "modalidad": "SIEMBRA"}},
+            {"detectado": ["droga", "tenía"], "sugerencia": {"calificacion": "LEY 23737", "modalidad": "TENENCIA"}}
+        ]
+    },
+    {
+        "contexto": "ELEMENTOS",
+        "sugerencias": [
+            {"detectado": ["cables", "cortó"], "sugerencia": {"calificacion": "ROBO", "modalidad": "ROBACABLES"}},
+            {"detectado": ["ruedas", "llevó"], "sugerencia": {"calificacion": "ROBO", "modalidad": "ROBARRUEDAS"}},
+            {"detectado": ["vidrio", "rompió", "auto"], "sugerencia": {"calificacion": "ROBO", "modalidad": "ROMPEVIDRIOS"}},
+            {"detectado": ["bicicleta", "sustracción"], "sugerencia": {"calificacion": "ROBO/HURTO", "modalidad": "BICICLETA"}},
+            {"detectado": ["medidor", "gas"], "sugerencia": {"calificacion": "ROBO", "modalidad": "SIMPLE"}}
+        ]
+    },
+    {
+        "contexto": "ARMAS Y VIOLENCIA",
+        "sugerencias": [
+            {"detectado": ["disparó", "no hirió"], "sugerencia": {"calificacion": "ABUSO DE ARMAS"}},
+            {"detectado": ["arma", "sin papeles", "casa"], "sugerencia": {"calificacion": "TENENCIA DE ARMAS"}},
+            {"detectado": ["pistola", "calle", "llevaba"], "sugerencia": {"calificacion": "PORTACIÓN DE ARMAS"}},
+            {"detectado": ["cuchillo", "cortó"], "sugerencia": {"calificacion": "LESIONES", "modalidad": "CON ARMA BLANCA"}}
+        ]
+    },
+    {
+        "contexto": "ENGAÑOS",
+        "sugerencias": [
+            {"detectado": ["cuento del tío", "presencial"], "sugerencia": {"calificacion": "ESTAFA", "modalidad": "CUENTO DEL TÍO"}},
+            {"detectado": ["falsa identidad", "dinero"], "sugerencia": {"calificacion": "ESTAFA", "modalidad": "OTROS"}},
+            {"detectado": ["inversión", "mentira"], "sugerencia": {"calificacion": "ESTAFA", "modalidad": "OTROS"}},
+            {"detectado": ["premio", "falso"], "sugerencia": {"calificacion": "ESTAFA", "modalidad": "CUENTO DEL TÍO"}}
+        ]
+    },
+    {
+        "contexto": "POLICIAL",
+        "sugerencias": [
+            {"detectado": ["procedimiento", "tiroteo"], "sugerencia": {"calificacion": "ENFRENTAMIENTO", "modalidad": "PROCEDIMIENTO POLICIAL"}},
+            {"detectado": ["persecución", "disparos"], "sugerencia": {"calificacion": "ENFRENTAMIENTO", "modalidad": "PROCEDIMIENTO POLICIAL"}},
+            {"detectado": ["resistió", "arresto"], "sugerencia": {"calificacion": "RESISTENCIA A LA AUTORIDAD"}},
+            {"detectado": ["desacato", "policía"], "sugerencia": {"calificacion": "DESACATO"}}
+        ]
+    }
+  ]
+}

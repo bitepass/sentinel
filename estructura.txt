@@ -1,0 +1,30 @@
+proyecto_sentinel/
+│
+├── docker-compose.yml
+├── .env.example
+├── README.md
+│
+├── config/
+│   ├── diccionario_policial.json
+│   └── DELEGACION.xlsx
+│
+├── docs/
+│   ├── 0_arquitectura_general.md
+│   ├── 1_servicio_persistencia.md
+│   ├── 2_servicio_clasificacion.md
+│   ├── 3_flujo_n8n.md
+│   └── referencias_carga_situacionales.docx
+│
+├── n8n_workflows/
+│   └── (archivos .json importables)
+│
+├── pruebas/
+│   └── SAN_MARTIN_2025.xlsx
+│
+├── services/
+│   ├── persistence_service/
+│   └── classification_service/
+│
+├── uploads/
+├── outputs/
+├── logs/

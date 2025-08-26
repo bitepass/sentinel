@@ -1,0 +1,6 @@
+# Terminal 1 - Persistencia
+cd "C:\Users\carri\proyecto sentinel"
+venv\Scripts\activate
+cd services\persistence_service
+uvicorn app.main:app --host 0.0.0.0 --port 8001 --reload
+

@@ -1,0 +1,146 @@
+version: '3.8'
+
+services:
+  # Redis - Broker para Celery
+  redis:
+    image: redis:7-alpine
+    container_name: sentinel_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Servicio de Persistencia
+  persistence_service:
+    build:
+      context: .
+      dockerfile: services/persistence_service/Dockerfile
+    container_name: sentinel_persistence
+    ports:
+      - "8001:8001"
+    environment:
+      - DATABASE_URL=sqlite:///./data/persistence.db
+      - PERSISTENCE_HOST=0.0.0.0
+      - PERSISTENCE_PORT=8001
+    volumes:
+      - ./data:/app/data
+      - ./config:/app/config
+    restart: unless-stopped
+    depends_on:
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Servicio de Clasificación (FastAPI)
+  classification_service:
+    build:
+      context: .
+      dockerfile: services/classification_service/Dockerfile
+    container_name: sentinel_classification
+    ports:
+      - "8002:8002"
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_DB=0
+      - PERSISTENCE_HOST=persistence_service
+      - PERSISTENCE_PORT=8001
+      - CLASSIFICATION_HOST=0.0.0.0
+      - CLASSIFICATION_PORT=8002
+    volumes:
+      - ./config:/app/config
+    restart: unless-stopped
+    depends_on:
+      persistence_service:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8002/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Workers de Celery para Clasificación
+  classification_worker:
+    build:
+      context: .
+      dockerfile: services/classification_service/Dockerfile
+    container_name: sentinel_classification_worker
+    command: python worker.py
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_DB=0
+      - PERSISTENCE_HOST=persistence_service
+      - PERSISTENCE_PORT=8001
+    volumes:
+      - ./config:/app/config
+    restart: unless-stopped
+    depends_on:
+      persistence_service:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    deploy:
+      replicas: 2  # Escalar a 2 workers por defecto
+
+  # Flower - Monitoreo de Celery (opcional)
+  flower:
+    build:
+      context: .
+      dockerfile: services/classification_service/Dockerfile
+    container_name: sentinel_flower
+    command: celery -A app.celery_app flower --port=5555
+    ports:
+      - "5555:5555"
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_DB=0
+    restart: unless-stopped
+    depends_on:
+      redis:
+        condition: service_healthy
+
+  # n8n - Workflow Automation
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: sentinel_n8n
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_HOST=0.0.0.0
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - N8N_USER_MANAGEMENT_DISABLED=true
+      - N8N_BASIC_AUTH_ACTIVE=false
+      - DB_SQLITE_POOL_SIZE=10
+      - N8N_RUNNERS_ENABLED=true
+      - WEBHOOK_URL=http://localhost:5678/
+    volumes:
+      - n8n_data:/home/node/.n8n
+    restart: unless-stopped
+    depends_on:
+      - classification_service
+      - persistence_service
+
+volumes:
+  redis_data:
+  n8n_data:
+
+networks:
+  default:
+    name: sentinel_network
+    driver: bridge

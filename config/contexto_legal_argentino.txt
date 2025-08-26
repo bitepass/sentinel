@@ -1,0 +1,78 @@
+REFERENCIAS PARA LA CARGA DE EXCEL PARA SITUACIONALES
+Columna Jurisdicción: colocar la jurisdicción del hecho
+Columna Calificación: colocar según el desplegable la calificación del hecho, en caso que el hecho no sea dentro de los que se trabajan en el situacional, se colocara NINGUNO DE INTERES, como por ejemplo lo serían las Lesiones Culposas.
+Columna Modalidad será acorde al siguiente instructivo:
+Los delitos abordados para la finalidad del presente son Homicidio, Robo, Hurto Enfrentamientos, Sustracción Automotor, Sustracción Motovehículo y Lesiones, Usurpación, Abuso Sexual, Ley 23737, Abigeato, Estafas, Abuso de Armas, Tenencia de Armas, Portación de Armas y Encubrimiento.  así como las circunstancias en que se acontecen los eventos. 
+
+Respecto de los delitos:
+Homicidio: refiere a los hechos exclusivamente dolosos.
+Homicidio simple: el homicidio doloso básico, sin agravantes.
+Femicidio: asesinato de una mujer por cuestiones de género.
+Intrafamiliar: son aquellos eventos que incluyen la muerte de uno o más miembros de una familia a mano de otro de la misma.
+En riña: se configura cuando, en el marco de una riña o agresión en la que participan más de dos personas, resulta la muerte de una de ellas.
+En ocasión de robo: debe existir un robo en curso o haberse consumado al momento del homicidio.
+Ajuste de cuentas: es un asesinato premeditado que se lleva a cabo con el objetivo de vengar un agravio o una deuda pendiente.
+
+ 	Respecto de las circunstancias:
+
+Del Robo:
+Escruche: ingreso a las viviendas en ausencia de los propietarios o sin confrontar con los mismos. Es una modalidad del Robo, con lo cual requiere el ingreso con el uso de la fuerza sobre un acceso de la vivienda.
+Entradera: aquellos robos violentos en los que los delincuentes sorprenden a los moradores en la entrada de los domicilios y los hacen ingresar.
+Asalto en finca: aquellos robos donde las víctimas son sorprendidas en el interior de sus domicilios o dentro de su propiedad (robo en presencia de moradores).
+Asalto en vía pública: incluye aquellos que se dan en el espacio público, con el ejercicio de violencia mediante intimidación de arma.
+Asalto en comercio: incluye aquellos que se dan en el interior de cualquier comercio, con el ejercicio de violencia mediante intimidación de arma.
+Motochorros: incluyen aquellos delitos que se dan cuando las víctimas son abordadas por delincuentes que se movilizan en motovehiculos. 
+Robacables: incluyen aquellos delitos donde el objeto sustraído es específicamente “cables”.
+Robo simple: incluyen aquellos delitos en donde se sustraen elementos mediante el empleo de la violencia, el objetivo es el elemento y no la persona como en categorías anteriores. (robos de medidores, caños de gas, garrafas, herramientas, etc)
+Robarruedas: incluye aquellos delitos en los que el elemento sustraído es exclusivamente las ruedas del automotor. 
+Rompevidrios: se da la particularidad de la ruptura de cualquier cristal (automotor) para la sustracción de algún elemento de interés. 
+Arrebatador: el arrebatamiento debe ser cometido de forma inmediata, es decir, sin que la víctima tenga tiempo de reaccionar.
+Bicicleta: Cuando el elemento sustraído es bicicleta. Es dable destacar que este elemento se puede encontrar en robo Hurto o en sustracción de vehículos, en cuyo caso se podrá como calificación según corresponda a un hurto o a un robo y la modalidad será bicicleta.
+Choferes/ repartidores: Todos aquellos que sufran de un robo, tanto choferes de taxis, como los de aplicaciones, repartidores, y todos aquellos que sean de interés. 
+
+Sustracción Automotor y Sustracción de Motovehículo: son contabilizados como tales cuando son el objetivo exclusivo del hecho delictivo. 
+De la sustracción Automotor y de Motovehículo:
+Levantamiento: en la vía pública, en ausencia del propietario.
+Asalto: robo al propietario. 
+Del Encubrimiento
+Encubrimiento vía pública: Son todos aquellos hechos en lo que se identifica a una o mas personas con rodados con pedido de secuestro que algunas de sus partes adulteradas. 
+Encubrimiento taller: Todos aquellos hechos donde se denuncia o se realice un procedimiento a talleres clandestino o acorde a la Ley 13081.
+Encubrimiento domicilio particular: Todos aquellos hechos donde se denuncia o se realice procedimientos, en un domicilio o comercio que no amerite llamar taller. 
+
+Lesiones: son contabilizadas como tales aquellas 
+Con el empleo de armas de fuego
+Con el empleo de armas blanca
+Con el empleo de armas impropias
+
+Enfrentamientos: 
+En ocasión de robo: cuando la victima se defiende de un ilícito repeliendo con arma de fuego entre víctimas y victimarios
+Ajuste de cuentas: Cuando el enfrentamiento se lleva a cabo con el objetivo de vengar un agravio o una deuda pendiente.
+Procedimiento Policial: Cuando el enfrentamiento ocurre entre el personal policial y los delincuentes en un procedimiento
+En riña: se configura cuando, en el marco de una riña o agresión en la que participan más de dos personas.
+Bandas antagónicas: cuando ocurre en el marco en el que dos grupos se enfrentan entre sí por algún a disputa.
+•	De las usurpaciones, como modalidad ira usurpación 
+•	Del abuso Sexual Modalidades
+Abuso Sexual Simple
+Abuso Sexual con Acceso Carnal.
+•	Ley 23737 modalidades
+Tenencia 
+Consumo
+Comercialización
+Siembra: Esto incluye plantas y semillas
+•	Abigeato modalidad abigeato
+•	Estafas modalidades
+Estafa Marketplace
+Estafa WhatsApp
+Estafa cuento del tío
+Estafa otros: todas las que no contemplen las anteriores
+•	Sobre Abuso De Armas la modalidad será Abuso De Armas
+•	Sobre Tenencia De Armas la modalidad será Tenencia De Armas
+•	Sobre Portación De Armas la modalidad será Portación De Armas
+Columna Víctima: Colocar Femenino o masculino, en caso en que las víctimas sean mas de una y sean de distinto genero colocar ambos
+Columna Lesionada: Colocar SI O NO, en caso de que la victima resulte o no herida.
+Columna Imputado: Colocar Femenino o masculino, en caso en que los imputados sean más de uno y sean de distinto genero colocar ambos
+Columna Mayor o Menor: Colocar Mayor o menor respecto de la edad del imputado, en caso de que sean más de uno y corresponda colocar ambos.
+Columna Armas: Colocar de Fuego, Blanca o impropia según corresponda.
+Columna Lugar: Colocar la locación en la que ocurre el ilícito, ejemplo Finca, vía pública, comercio, Establecimiento Educativo, etc. 
+Columna Tentativa: Colocar lo que corresponda. Si o No
+Columna Observación: Colocar todo dato que resulte relevante de ser necesario  

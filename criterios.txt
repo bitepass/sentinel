@@ -1,0 +1,117 @@
+El Plan de Construcción Profesional (Prompts Optimizados para Cursor)**
+
+Sigue estos pasos en orden. No avances al siguiente hasta que los "Criterios de Aceptación" se cumplan.
+
+#### **PASO 1: Entorno y Servicio de Persistencia**
+
+* **Objetivo:** Tener el servicio que maneja los datos funcionando de manera independiente.
+* **Archivos a Enfocar:** `docs/1_servicio_persistencia.md` y la carpeta `services/persistence_service/`.
+* **Prompt Optimizado para Cursor:**
+    > **ROL:** Actúa como un Ingeniero de Software Senior, experto en Python, FastAPI, PostgreSQL y arquitectura SOLID.
+    >
+    > **CONTEXTO:** Estamos iniciando el Proyecto Sentinel. Tu guía principal son los archivos `docs/0_arquitectura_general.md` y `docs/1_servicio_persistencia.md`. Trabajarás dentro de la carpeta `services/persistence_service/`.
+    >
+    > **TAREA:** Implementa el `Servicio de Persistencia` completo. Esto incluye:
+    > 1.  Crear la API en FastAPI con todos los endpoints definidos en el `API Contract`.
+    > 2.  Para el endpoint `POST /sheet/generate_final`, implementa la lógica usando la librería `openpyxl` para aplicar el color de fondo `#b2a1c7` y los filtros automáticos a las columnas R-AB.
+    > 3.  Genera un `Dockerfile` optimizado para este servicio.
+    > 4.  Crea un script de pruebas `test_persistence.py` que verifique la funcionalidad de cada endpoint de forma aislada.
+    >
+    > **RESTRICCIONES:** El código debe ser de calidad de producción. Incluye manejo de errores exhaustivo (try-except) para todas las operaciones de archivos y base de datos, y añade logging detallado que informe sobre cada operación realizada.
+
+* **Qué Exigir (Criterios de Aceptación):**
+    * ✅ El script `test_persistence.py` se ejecuta sin errores y las pruebas pasan.
+    * ✅ Al probar `POST /sheet/prepare`, los datos de un Excel de muestra aparecen correctamente en la base de datos PostgreSQL.
+    * ✅ Al probar `POST /sheet/generate_final`, se crea un archivo `.xlsx` en el disco con el formato y color exactos.
+
+PASO 2 (Versión Mejorada): Servicio de Clasificación con Conocimiento Real
+Objetivo: Construir el "cerebro" del sistema, usando los documentos de referencia reales para una clasificación precisa.
+
+Archivos a Enfocar:
+
+docs/2_servicio_clasificacion.md
+
+La carpeta services/classification_service/
+
+¡NUEVO! config/diccionario_policial.json
+
+¡NUEVO! REFERENCIAS PARA LA CARGA DE EXCEL PARA SITUACIONALES.docx (Asegúrate de que esté en la carpeta docs/ o config/ para que Cursor lo vea).
+
+Prompt Optimizado para Cursor (NUEVA VERSIÓN PARA EL PASO 2):
+
+ROL: Actúa como un Ingeniero de Software Senior, experto en la creación de motores de clasificación y Procesamiento de Lenguaje Natural (NLP).
+
+CONTEXTO: Hemos completado el Servicio de Persistencia. Ahora construiremos el Servicio de Clasificación. Tu fuente de verdad para la lógica de negocio son dos archivos críticos:
+
+config/diccionario_policial.json: Este es el motor de reglas técnicas. Tu código debe cargarlo e interpretarlo para la clasificación local.
+
+REFERENCIAS PARA LA CARGA DE EXCEL PARA SITUACIONALES.docx: Este es el manual de doctrina y contexto funcional. Debes usarlo para entender la intención detrás de las reglas y para resolver ambigüedades.
+
+TAREA:
+
+Implementa el Servicio de Clasificación completo en FastAPI con su endpoint POST /classify/{document_id}.
+
+Crea una clase Classifier dentro del servicio. En su inicialización (__init__), debe cargar y procesar las reglas del archivo config/diccionario_policial.json.
+
+Implementa el método de clasificación híbrida:
+
+Fase Local: El método debe aplicar las reglas del diccionario_policial.json al texto del relato para intentar una clasificación determinista.
+
+Fase IA: Si la fase local no arroja un resultado con alta confianza, el método debe preparar y llamar a una API de IA, usando el contenido del documento de REFERENCIAS... para darle contexto y asegurar una clasificación precisa.
+
+Genera su Dockerfile y un test_classification.py completo.
+
+RESTRICCIONES: El sistema debe ser modular. La comunicación con el Servicio de Persistencia debe hacerse exclusivamente a través de su API, como planeamos. El código debe ser un reflejo fiel de la lógica descrita en tus archivos de referencia.
+
+Qué Exigir (Criterios de Aceptación para el NUEVO PASO 2):
+
+✅ El script test_classification.py se ejecuta sin errores.
+
+✅ El servicio interactúa correctamente con el Servicio de Persistencia para obtener y guardar datos.
+
+✅ NUEVO Y CRÍTICO: Al probar con un relato de ejemplo que contenga palabras clave obvias del diccionario_policial.json (ej. "dos sujetos en motocicleta arrebatan cartera"), el log del servicio debe mostrar "Clasificado localmente como ROBO - MOTOCHORROS" (o similar).
+
+✅ NUEVO Y CRÍTICO: Al probar con un relato ambiguo, el log debe mostrar "Clasificación local con baja confianza. Derivando a Fase IA.".
+
+#### **PASO 3: El Orquestador n8n**
+
+* **Objetivo:** Crear el flujo visual que une todo el sistema y gestiona el proceso.
+* **Archivos a Enfocar:** `docs/3_flujo_n8n.md`.
+* **Prompt Optimizado para Cursor:**
+    > **ROL:** Ahora, actúa como un Especialista en Automatización de Procesos, experto en n8n y orquestación de microservicios.
+    >
+    > **CONTEXTO:** Tenemos dos microservicios (`persistence_service` y `classification_service`) listos para ser orquestados desde n8n. Las especificaciones del flujo están en `docs/3_flujo_n8n.md`.
+    >
+    > **TAREA:** Genera el **código JSON completo** del workflow de n8n.
+    >
+    > **RESTRICCIONES:**
+    > 1.  El JSON debe ser directamente importable a n8n.
+    > 2.  Los nodos `HTTP Request` deben usar las URLs internas de Docker para la comunicación (ej: `http://persistence_service:8000/sheet/prepare`).
+    > 3.  Configura los nodos `HTTP Request` para que realicen **2 reintentos** en caso de fallo, con un intervalo de 10 segundos.
+    > 4.  Añade un manejo de errores que, si un nodo falla definitivamente, envíe una notificación a un webhook de Discord.
+    > 5.  Proporciona una breve explicación de cómo importar el JSON en la interfaz de n8n.
+
+* **Qué Exigir (Criterios de Aceptación):**
+    * ✅ Puedes copiar el JSON generado.
+    * ✅ Al importar el JSON desde el portapapeles en n8n, el workflow aparece visualmente con los nodos correctos (Webhook, 3x HTTP Request, Discord).
+    * ✅ Al inspeccionar los nodos HTTP, la configuración de reintentos y manejo de errores está presente.
+
+#### **PASO 4: Puesta en Marcha y Pruebas Finales**
+
+* **Objetivo:** Levantar todo el ecosistema de servicios y realizar una prueba completa de principio a fin.
+* **Archivos a Enfocar:** El directorio raíz del proyecto (`/proyecto_sentinel/`).
+* **Prompt Optimizado para Cursor:**
+    > **ROL:** Actúa como un Ingeniero DevOps experto en Docker y orquestación de contenedores.
+    >
+    > **CONTEXTO:** Tenemos los servicios `persistence_service` y `classification_service`, cada uno con su `Dockerfile`, y un workflow de n8n. Necesitamos unirlos para que funcionen como un sistema cohesivo.
+    >
+    > **TAREA:**
+    > 1.  Crea el archivo `docker-compose.yml` final. Debe definir los cuatro servicios: `n8n`, `postgres`, `persistence_service`, y `classification_service`.
+    > 2.  Configura las redes y los volúmenes para la persistencia de datos.
+    > 3.  Crea un archivo `.env.example` que sirva como plantilla para todas las variables de entorno necesarias (credenciales de DB, etc.).
+    >
+    > **RESTRICCIONES:** El `docker-compose.yml` debe estar listo para producción local, asegurando que los servicios puedan comunicarse entre sí por sus nombres de servicio.
+
+* **Qué Exigir (Criterios de Aceptación):**
+    * ✅ El comando `docker-compose up -d` se ejecuta sin errores y todos los contenedores están corriendo.
+    * ✅ **LA PRUEBA FINAL:** Realizas una prueba completa enviando una petición al webhook de n8n (puedes usar una herramienta como Postman o Insomnia al principio) y, después de unos momentos, recibes el archivo "DELEGACION" finalizado en tu canal de Discord.

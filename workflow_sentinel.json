@@ -1,0 +1,124 @@
+{
+  "name": "Proyecto Sentinel - Clasificación Automática",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "upload-excel",
+        "responseMode": "lastNode"
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "url": "http://localhost:8001/sheet/prepare-upload",
+        "method": "POST",
+        "sendBody": true,
+        "bodyContentType": "multipart-form-data",
+        "formData": {
+          "file": {
+            "name": "file",
+            "type": "file",
+            "value": "={{ $json.file }}"
+          }
+        }
+      },
+      "id": "upload-excel",
+      "name": "Subir Excel a Persistencia",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "url": "http://localhost:8002/classify/={{ $json.document_id }}",
+        "method": "POST",
+        "sendBody": true,
+        "bodyContentType": "json",
+        "jsonBody": "{\n  \"batch_size\": 200,\n  \"max_batches\": null,\n  \"strategy\": \"rules\",\n  \"generate_final\": true\n}"
+      },
+      "id": "classify-data",
+      "name": "Clasificar Datos",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "url": "http://localhost:8001/sheet/final/={{ $json.document_id }}",
+        "method": "GET",
+        "responseFormat": "file"
+      },
+      "id": "download-final",
+      "name": "Descargar Archivo Final",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseCode": 200,
+        "responseBody": "{\n  \"success\": true,\n  \"document_id\": \"={{ $json.document_id }}\",\n  \"processed_rows\": \"={{ $json.processed_rows }}\",\n  \"message\": \"Excel clasificado y archivo final generado exitosamente\"\n}"
+      },
+      "id": "response",
+      "name": "Respuesta Final",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1120, 300]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Subir Excel a Persistencia",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Subir Excel a Persistencia": {
+      "main": [
+        [
+          {
+            "node": "Clasificar Datos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Clasificar Datos": {
+      "main": [
+        [
+          {
+            "node": "Descargar Archivo Final",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Descargar Archivo Final": {
+      "main": [
+        [
+          {
+            "node": "Respuesta Final",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "versionId": "1"
+}
