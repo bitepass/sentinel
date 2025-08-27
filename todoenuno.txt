@@ -1,0 +1,20 @@
+# Script completo de activación y verificación
+Write-Host "🚀 ACTIVANDO SISTEMA SENTINEL..." -ForegroundColor Cyan
+
+# 1. Verificar Docker
+if (!(Get-Process "Docker Desktop" -ErrorAction SilentlyContinue)) {
+    Write-Host "Iniciando Docker Desktop..." -ForegroundColor Yellow
+    Start-Process "Docker Desktop"
+    Start-Sleep 30
+}
+
+# 2. Rebuild con fix de Flower
+Write-Host "Rebuilding con fix de Flower..." -ForegroundColor Yellow
+docker-compose down -v
+docker-compose build --no-cache  
+docker-compose up -d
+
+# 3. Verificación express
+Start-Sleep 45
+Write-Host "🔍 VERIFICACIÓN FINAL:" -ForegroundColor Cyan
+docker-compose ps

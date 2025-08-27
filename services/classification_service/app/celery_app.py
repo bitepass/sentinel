@@ -11,10 +11,13 @@ logger = logging.getLogger(__name__)
 # Cargar variables de entorno
 load_dotenv()
 
-# Configuración de Redis
+# Configuración de Redis (SECURIZADO)
 REDIS_HOST = os.getenv("REDIS_HOST", "localhost")
 REDIS_PORT = int(os.getenv("REDIS_PORT", "6379"))
 REDIS_DB = int(os.getenv("REDIS_DB", "0"))
+REDIS_PASSWORD = os.getenv("REDIS_PASSWORD")
+if not REDIS_PASSWORD:
+    raise RuntimeError("REDIS_PASSWORD es OBLIGATORIO para seguridad")
 
 def wait_for_redis(max_retries: int = 10, retry_delay: float = 2.0) -> bool:
     """
@@ -25,10 +28,17 @@ def wait_for_redis(max_retries: int = 10, retry_delay: float = 2.0) -> bool:
     
     for attempt in range(max_retries):
         try:
-            redis_client = Redis(host=REDIS_HOST, port=REDIS_PORT, db=REDIS_DB, socket_timeout=5)
+            redis_client = Redis(
+                host=REDIS_HOST, 
+                port=REDIS_PORT, 
+                db=REDIS_DB, 
+                password=REDIS_PASSWORD,
+                socket_timeout=5,
+                decode_responses=True
+            )
             redis_client.ping()
             redis_client.close()
-            logger.info("✅ Redis está disponible")
+            logger.info("✅ Redis está disponible y autenticado")
             return True
             
         except (ConnectionError, TimeoutError) as e:
@@ -47,9 +57,9 @@ def wait_for_redis(max_retries: int = 10, retry_delay: float = 2.0) -> bool:
 if not wait_for_redis():
     logger.error("No se puede conectar a Redis. El servicio puede no funcionar correctamente.")
 
-# Configuración de Celery
-CELERY_BROKER_URL = f"redis://{REDIS_HOST}:{REDIS_PORT}/{REDIS_DB}"
-CELERY_RESULT_BACKEND = f"redis://{REDIS_HOST}:{REDIS_PORT}/{REDIS_DB}"
+# Configuración de Celery (SECURIZADO CON PASSWORD)
+CELERY_BROKER_URL = f"redis://:{REDIS_PASSWORD}@{REDIS_HOST}:{REDIS_PORT}/{REDIS_DB}"
+CELERY_RESULT_BACKEND = f"redis://:{REDIS_PASSWORD}@{REDIS_HOST}:{REDIS_PORT}/{REDIS_DB}"
 
 # Crear instancia de Celery
 celery_app = Celery(

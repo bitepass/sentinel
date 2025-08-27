@@ -93,7 +93,7 @@ class ClassifyResponse(BaseModel):
     """Respuesta del endpoint de clasificación"""
     document_id: str = Field(..., min_length=1, max_length=64)
     task_id: str = Field(..., min_length=1)
-    status: str = Field(..., regex="^(enqueued|processing|completed|failed)$")
+    status: str = Field(..., pattern="^(enqueued|processing|completed|failed)$")
     message: str = Field(..., min_length=1, max_length=500)
     strategy: StrategyEnum
     options: Dict[str, Any] = Field(default_factory=dict)
@@ -101,7 +101,7 @@ class ClassifyResponse(BaseModel):
 class TaskStatus(BaseModel):
     """Estado de una tarea de Celery"""
     task_id: str = Field(..., min_length=1)
-    status: str = Field(..., regex="^(processing|completed|failed)$")
+    status: str = Field(..., pattern="^(processing|completed|failed)$")
     progress: Optional[int] = Field(None, ge=0, le=100)
     result: Optional[Dict[str, Any]] = None
     error: Optional[str] = None
@@ -114,9 +114,9 @@ class DocumentProgress(BaseModel):
 
 class HealthResponse(BaseModel):
     """Respuesta del health check"""
-    status: str = Field(..., regex="^(ok|error)$")
+    status: str = Field(..., pattern="^(ok|error)$")
     service: str = Field(..., min_length=1)
-    redis: Optional[str] = Field(None, regex="^(ok|error)$")
-    persistence: Optional[str] = Field(None, regex="^(ok|error)$")
+    redis: Optional[str] = Field(None, pattern="^(ok|error)$")
+    persistence: Optional[str] = Field(None, pattern="^(ok|error)$")
     version: str = Field(..., min_length=1)
     error: Optional[str] = None
